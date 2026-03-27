@@ -1317,7 +1317,7 @@ else:
 
     st.markdown("""
     <div class="page-header">
-        <h1>Panel Académico</h1>
+        <h1>Panel académico</h1>
         <p>Validación de hipótesis - Desempeño del modelo - Hallazgos clave</p>
     </div>
     """, unsafe_allow_html=True)
@@ -1333,7 +1333,7 @@ else:
     prec_prophet = 100 - mape_prophet
     h2_ok    = prec_prophet >= 85.0
     cls_h2   = "hip-confirmada" if h2_ok else "hip-parcial"
-    lbl_h2   = "✅ Confirmada" if h2_ok else "⚠️ Parcialmente confirmada"
+    lbl_h2   = "✅ Confirmada" if h2_ok else "Parcialmente confirmada"
     usando_p = modelos["usando_prophet"]
 
     st.markdown(f"""
@@ -1383,9 +1383,9 @@ else:
 
     for col, letra, nombre, mape, nota in [
         (m_col1, "A", "Afluencia\nmensual\n(baseline)",  modelos["mape_af"],         "Regresión + estacionalidad"),
-        (m_col2, "P", "Afluencia\nmensual\n(Prophet)",   modelos["mape_af_prophet"], "Prophet + eventos (Módulo 2B)"),
-        (m_col3, "B", "Gasto\noperativo",                modelos["mape_gs"],         "Ridge Regression (L2)"),
-        (m_col4, "C/D", "Consumo\neléctrico · agua",     max(modelos["mape_en"], modelos["mape_ag"]), "Reg. lineal múltiple"),
+        (m_col2, "P", "Afluencia\nmensual\n(Prophet)",   modelos["mape_af_prophet"], "Prophet + eventos"),
+        (m_col3, "B", "Gasto\noperativo",                modelos["mape_gs"],         "Ridge Regression"),
+        (m_col4, "C/D", "Consumo\neléctrico y de agua",     max(modelos["mape_en"], modelos["mape_ag"]), "Reg. lineal múltiple"),
     ]:
         prec   = 100 - mape
         cumple = prec >= 85
@@ -1414,12 +1414,12 @@ else:
     # ── Sección 3: Gráficas de análisis ──────────────────────────────────────
     st.markdown("""
     <div class="section-card">
-    <div class="section-title">📊 Análisis histórico y desempeño del modelo</div>
+    <div class="section-title">Análisis histórico y desempeño del modelo</div>
     """, unsafe_allow_html=True)
 
     fig3, axes3 = plt.subplots(2, 2, figsize=(14, 9))
     fig3.suptitle(
-        "Sistema Predictivo ARCO · Plaza San Isidro · 2023–2025",
+        "Sistema predictivo ARCO - Plaza Paseo San Isidro - 2023–2025",
         fontsize=12, fontweight="700", color=C_PRIM, y=1.01
     )
 
@@ -1570,7 +1570,7 @@ else:
             <div style='font-size:0.85rem; color:#2C3E50; line-height:1.5;'>
                 El <strong>{meses_exc/36:.0%}</strong> de los meses del período
                 de estudio superó el presupuesto de gasto, confirmando la
-                gestión reactiva documentada en el planteamiento del problema.
+                administración reactiva documentada en el planteamiento del problema.
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -1616,8 +1616,8 @@ else:
 # ── Footer ───────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="footer">
-    ARCO Áreas Comerciales · Plaza San Isidro · Sistema Predictivo de Eficiencia Operativa<br>
-    Maestría en Analítica e Inteligencia de Negocios · UDEM · 2025 ·
+    ARCO Áreas Comerciales - Plaza Paseo San Isidro - Sistema predictivo de apoyo a la eficiencia operativa<br>
+    Maestría en Analítica e Inteligencia de Negocios - UDEM - 2026 -
     Emanuel Delgadillo Hernández
 </div>
 """, unsafe_allow_html=True)
