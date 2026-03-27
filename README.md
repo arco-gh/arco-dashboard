@@ -3,7 +3,7 @@
 Sistema de predicción de afluencia y eficiencia operativa para Plaza San Isidro, Culiacán, Sinaloa.
 
 **Maestría en Analítica e Inteligencia de Negocios · UDEM · 2025**
-Autor: Emanuel Delgadillo Hernández | Director: Dr. Rafael Cruz Reyes
+Autor: Emanuel Delgadillo Hernández | Director: Dr. Juan Baldemar Garza Villegas
 
 ---
 
@@ -17,7 +17,7 @@ modulo3_dashboard/
 └── Informacion-PSI-23-24-25-detallado.xlsx   ← datos (agregar manualmente)
 ```
 
-> ⚠️ El archivo Excel de datos NO se incluye en el repositorio por privacidad.
+> El archivo Excel de datos NO se incluye en el repositorio por privacidad.
 > Debes subirlo manualmente al repositorio antes de desplegar.
 
 ---
