@@ -1545,7 +1545,7 @@ else:
         ratio_act = dm["ratio_gasto_ingresos"].mean()
         st.markdown(f"""
         <div style='padding:1rem; background:#EBF5FB; border-radius:10px; height:100%;'>
-            <div style='font-size:2rem; margin-bottom:0.5rem;'>📉</div>
+            <div style='font-size:2rem; margin-bottom:0.5rem;'></div>
             <div style='font-weight:700; color:{C_PRIM}; margin-bottom:0.4rem;'>
                 Ratio actual: {ratio_act:.1%}
             </div>
@@ -1563,7 +1563,7 @@ else:
                          dm["presupuesto-gasto-operativo-total"]).sum())
         st.markdown(f"""
         <div style='padding:1rem; background:#FEF9E7; border-radius:10px; height:100%;'>
-            <div style='font-size:2rem; margin-bottom:0.5rem;'>⚠️</div>
+            <div style='font-size:2rem; margin-bottom:0.5rem;'></div>
             <div style='font-weight:700; color:{C_PRIM}; margin-bottom:0.4rem;'>
                 {meses_exc} de 36 meses excedieron presupuesto
             </div>
@@ -1579,7 +1579,7 @@ else:
         ahorro_anual = dm["ingresos_por_renta"].mean() * 0.05 * 12
         st.markdown(f"""
         <div style='padding:1rem; background:#D4EFDF; border-radius:10px; height:100%;'>
-            <div style='font-size:2rem; margin-bottom:0.5rem;'>💰</div>
+            <div style='font-size:2rem; margin-bottom:0.5rem;'></div>
             <div style='font-weight:700; color:{C_PRIM}; margin-bottom:0.4rem;'>
                 Ahorro potencial: ${ahorro_anual/1e6:.2f}M MXN/año
             </div>
