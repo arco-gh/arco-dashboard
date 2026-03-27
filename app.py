@@ -60,7 +60,7 @@ html, body, [class*="css"] {
     background: linear-gradient(180deg, #1B3A5C 0%, #0F2239 100%);
     border-right: none;
 }
-[data-testid="stSidebar"] * { color: #CADCEC !important; }
+[data-testid="stSidebar"] * { color: #2B5478 !important; }
 [data-testid="stSidebar"] .stRadio label { color: #B8C8D8 !important; }
 [data-testid="stSidebar"] .stRadio [data-testid="stMarkdownContainer"] p {
     color: #E8EEF4 !important;
