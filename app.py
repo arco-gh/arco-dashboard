@@ -762,7 +762,7 @@ with st.sidebar:
         <div style='font-size:2.2rem; margin-bottom:0.3rem;'>📊</div>
         <div style='font-size:1.1rem; font-weight:700; color:#E8EEF4;'>ARCO</div>
         <div style='font-size:0.75rem; color:#7A9BBF; letter-spacing:1px;'>
-            PLAZA SAN ISIDRO · CULIACÁN
+            PLAZA PASEO SAN ISIDRO - CULIACÁN
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -771,7 +771,7 @@ with st.sidebar:
 
     vista = st.radio(
         "Selecciona la vista:",
-        options=["🏢  Panel Operativo", "🎓  Panel Académico"],
+        options=["Panel operativo", "Panel académico"],
         label_visibility="collapsed",
     )
 
@@ -800,12 +800,12 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("""
     <div style='font-size:0.72rem; color:#4A6A8A; line-height:1.6;'>
-        <b style='color:#7A9BBF;'>Investigación</b><br>
+        <b style='color:#7A9BBF;'>Proyecto de eficiencia operativa</b><br>
         Emanuel Delgadillo Hernández<br>
-        MTRO. en Analítica e Inteligencia de Negocios<br>
-        Universidad de Monterrey · 2025<br><br>
-        <b style='color:#7A9BBF;'>Director</b><br>
-        Dr. Rafael Cruz Reyes
+        Maestría en Analítica e Inteligencia de Negocios<br>
+        Universidad de Monterrey - 2026<br><br>
+        <b style='color:#7A9BBF;'>Asesor</b><br>
+        Dr. Juan Baldemar Garza Villegas
     </div>
     """, unsafe_allow_html=True)
 
@@ -818,7 +818,7 @@ try:
     modelos = entrenar_modelos(dm)
 except FileNotFoundError:
     st.error(
-        "⚠️  No se encontró el archivo **Informacion-PSI-23-24-25-detallado.xlsx**. "
+        "No se encontró el archivo **Informacion-PSI-23-24-25-detallado.xlsx**. "
         "Asegúrate de que esté en el mismo directorio que app.py."
     )
     st.stop()
@@ -827,7 +827,7 @@ except FileNotFoundError:
 # ═══════════════════════════════════════════════════════════════════════════════
 # VISTA 1 — PANEL OPERATIVO
 # ═══════════════════════════════════════════════════════════════════════════════
-if vista == "🏢  Panel Operativo":
+if vista == "Panel operativo":
 
     mes_nombre = MESES_ESP[mes_sel - 1]
 
@@ -835,7 +835,7 @@ if vista == "🏢  Panel Operativo":
     <div class="page-header">
         <h1>Panel Operativo</h1>
         <p>Predicción para <strong>{mes_nombre} {año_sel}</strong>
-        · Plaza San Isidro · Culiacán, Sinaloa</p>
+        - Plaza Paseo San Isidro - Culiacán, Sinaloa</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -919,7 +919,7 @@ if vista == "🏢  Panel Operativo":
     with col_izq:
         st.markdown("""
         <div class="section-card">
-        <div class="section-title">⚡ Consumos proyectados</div>
+        <div class="section-title">Consumos proyectados</div>
         """, unsafe_allow_html=True)
 
         # kWh
@@ -1007,7 +1007,7 @@ if vista == "🏢  Panel Operativo":
     # ── Fila 3: Gráfica histórico + tendencia ────────────────────────────────
     st.markdown("""
     <div class="section-card">
-    <div class="section-title">📈 Histórico 2023–2025 y proyección acumulada del año seleccionado</div>
+    <div class="section-title">Histórico 2023–2025 y proyección acumulada del año seleccionado</div>
     """, unsafe_allow_html=True)
 
     # Generar proyección acumulada enero → mes_sel del año elegido
@@ -1300,7 +1300,7 @@ if vista == "🏢  Panel Operativo":
     ahorro_5ppt_anual = pred["ingresos_prom"] * 0.05 * 12
     st.markdown(f"""
     <div class="nota-metodo" style='font-size:0.88rem;'>
-        💡 <strong>Estimación de ahorro anual:</strong>
+        <strong>Estimación de ahorro anual:</strong>
         Si se utilizan estas predicciones para ajustar la asignación
         de personal y recursos en función de la afluencia esperada,
         el ahorro potencial en un escenario moderado (reducción del 5%)
@@ -1318,14 +1318,14 @@ else:
     st.markdown("""
     <div class="page-header">
         <h1>Panel Académico</h1>
-        <p>Validación de hipótesis · Desempeño del modelo · Hallazgos clave</p>
+        <p>Validación de hipótesis - Desempeño del modelo - Hallazgos clave</p>
     </div>
     """, unsafe_allow_html=True)
 
     # ── Sección 1: Hipótesis ─────────────────────────────────────────────────
     st.markdown("""
     <div class="section-card">
-    <div class="section-title">🔬 Validación de hipótesis</div>
+    <div class="section-title">Validación de hipótesis</div>
     """, unsafe_allow_html=True)
 
     h_col1, h_col2 = st.columns(2)
