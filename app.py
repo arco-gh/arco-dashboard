@@ -37,7 +37,7 @@ except ImportError:
 
 # ── Configuración de página ──────────────────────────────────────────────────
 st.set_page_config(
-    page_title="ARCO · Dashboard Predictivo",
+    page_title="ARCO - Tablero predictivo",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -1595,7 +1595,7 @@ else:
     st.markdown("</div>", unsafe_allow_html=True)
 
     # ── Referencias ──────────────────────────────────────────────────────────
-    with st.expander("📚 Referencias bibliográficas principales"):
+    with st.expander("Referencias bibliográficas principales"):
         st.markdown("""
         - Amangeldy et al. (2025). *A hybrid machine learning approach for
           high-accuracy energy consumption prediction.* Energies, 18(15), 4164.
