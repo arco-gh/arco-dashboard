@@ -1328,48 +1328,48 @@ else:
     <div class="section-title">Validación de hipótesis</div>
     """, unsafe_allow_html=True)
 
-        mape_prophet = modelos["mape_af_prophet"]   # 5.05% del Módulo 2B
-        mape_af_base = modelos["mape_af"]            # Modelo A baseline
-        prec_prophet = 100 - mape_prophet
-        h2_ok    = prec_prophet >= 85.0
-        cls_h2   = "hip-confirmada" if h2_ok else "hip-parcial"
-        lbl_h2   = "✅ Confirmada" if h2_ok else "⚠️ Parcialmente confirmada"
-        usando_p = modelos["usando_prophet"]
+    mape_prophet = modelos["mape_af_prophet"]   # 5.05% del Módulo 2B
+    mape_af_base = modelos["mape_af"]            # Modelo A baseline
+    prec_prophet = 100 - mape_prophet
+    h2_ok    = prec_prophet >= 85.0
+    cls_h2   = "hip-confirmada" if h2_ok else "hip-parcial"
+    lbl_h2   = "✅ Confirmada" if h2_ok else "⚠️ Parcialmente confirmada"
+    usando_p = modelos["usando_prophet"]
 
-        st.markdown(f"""
-        <p style='font-size:0.82rem; color:#8D99AE; margin-bottom:0.5rem;
-            font-weight:600; text-transform:uppercase;'>H2</p>
-        <p style='font-size:0.9rem; color:#2C3E50; margin-bottom:0.7rem;'>
-            "La afluencia podrá ser anticipada con un 85% de precisión."
-        </p>
-        <span class="hipotesis-badge {cls_h2}">{lbl_h2}</span>
-        <div class="pred-table" style='margin-top:0.8rem;'>
-            <div class="pred-row">
-                <span class="pred-label">Prophet + eventos (MAPE)</span>
-                <span class="pred-val">{mape_prophet:.2f}%  →  {prec_prophet:.1f}%</span>
-            </div>
-            <div class="pred-row">
-                <span class="pred-label">Modelo A — Regresión (baseline)</span>
-                <span class="pred-val">{mape_af_base:.2f}%  →  {100-mape_af_base:.1f}%</span>
-            </div>
-            <div class="pred-row">
-                <span class="pred-label">Meta del anteproyecto</span>
-                <span class="pred-val">≥ 85.0%</span>
-            </div>
-            <div class="pred-row">
-                <span class="pred-label">Modelo activo en dashboard</span>
-                <span class="pred-val">
+    st.markdown(f"""
+    <p style='font-size:0.82rem; color:#8D99AE; margin-bottom:0.5rem;
+      font-weight:600; text-transform:uppercase;'>H2</p>
+    <p style='font-size:0.9rem; color:#2C3E50; margin-bottom:0.7rem;'>
+      "La afluencia podrá ser anticipada con un 85% de precisión."
+    </p>
+    <span class="hipotesis-badge {cls_h2}">{lbl_h2}</span>
+    <div class="pred-table" style='margin-top:0.8rem;'>
+        <div class="pred-row">
+             <span class="pred-label">Prophet + eventos (MAPE)</span>
+             <span class="pred-val">{mape_prophet:.2f}%  →  {prec_prophet:.1f}%</span>
+         </div>
+     <div class="pred-row">
+         <span class="pred-label">Modelo A — Regresión (baseline)</span>
+         <span class="pred-val">{mape_af_base:.2f}%  →  {100-mape_af_base:.1f}%</span>
+     </div>
+     <div class="pred-row">
+         <span class="pred-label">Meta del anteproyecto</span>
+         <span class="pred-val">≥ 85.0%</span>
+     </div>
+     <div class="pred-row">
+         <span class="pred-label">Modelo activo en dashboard</span>
+         <span class="pred-val">
                     {'✅ Prophet + eventos' if usando_p else '⚠️ Regresión (pkl no encontrado)'}
-                </span>
-            </div>
-        </div>
-        <div class="nota-metodo">
-            Ozdemir et al. (2022) consideran MAPEs de 10–20% como
-            aceptables en modelos de afluencia comercial.
-            Prophet incorpora 158 eventos agrupados en 5 categorías
-            del calendario de Plaza San Isidro (Taylor & Letham, 2018).
-        </div>
-        """, unsafe_allow_html=True)
+         </span>
+     </div>
+     </div>
+     <div class="nota-metodo">
+         Ozdemir et al. (2022) consideran MAPEs de 10–20% como
+         aceptables en modelos de afluencia comercial.
+         Prophet incorpora 158 eventos agrupados en 5 categorías
+         del calendario de Plaza San Isidro (Taylor & Letham, 2018).
+     </div>
+     """, unsafe_allow_html=True)
 
     st.markdown("</div>", unsafe_allow_html=True)
 
