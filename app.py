@@ -1329,7 +1329,6 @@ else:
     """, unsafe_allow_html=True)
 
     h_col1 = st.columns(1)
-
     with h_col1:
         mape_prophet = modelos["mape_af_prophet"]   # 5.05% del Módulo 2B
         mape_af_base = modelos["mape_af"]            # Modelo A baseline
