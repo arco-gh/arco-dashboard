@@ -1328,51 +1328,9 @@ else:
     <div class="section-title">Validación de hipótesis</div>
     """, unsafe_allow_html=True)
 
-    h_col1, h_col2 = st.columns(2)
+    h_col1 = st.columns(1)
 
     with h_col1:
-        # H1: correlación afluencia - gasto
-        from scipy import stats as sp_stats
-        dm_clean = dm[~dm["es_outlier_gasto"]].dropna(
-            subset=["afluencia_mensual", "gasto-operativo-total"])
-        r_val, p_val = sp_stats.pearsonr(
-            dm_clean["afluencia_mensual"],
-            dm_clean["gasto-operativo-total"])
-        h1_ok = p_val < 0.10  # umbral más amplio con n pequeño
-        cls_h1 = "hip-confirmada" if h1_ok else "hip-parcial"
-        lbl_h1 = "✅ Confirmada" if h1_ok else "⚠️ Parcialmente confirmada"
-
-        st.markdown(f"""
-        <p style='font-size:0.82rem; color:#8D99AE; margin-bottom:0.5rem;
-            font-weight:600; text-transform:uppercase;'>H1</p>
-        <p style='font-size:0.9rem; color:#2C3E50; margin-bottom:0.7rem;'>
-            "La afluencia está correlacionada con el gasto operativo."
-        </p>
-        <span class="hipotesis-badge {cls_h1}">{lbl_h1}</span>
-        <div class="pred-table" style='margin-top:0.8rem;'>
-            <div class="pred-row">
-                <span class="pred-label">Pearson r (sin outlier)</span>
-                <span class="pred-val">{r_val:.4f}</span>
-            </div>
-            <div class="pred-row">
-                <span class="pred-label">p-valor</span>
-                <span class="pred-val">{p_val:.4f}</span>
-            </div>
-            <div class="pred-row">
-                <span class="pred-label">n observaciones</span>
-                <span class="pred-val">{len(dm_clean)}</span>
-            </div>
-        </div>
-        <div class="nota-metodo">
-            La correlación simple no es significativa al 0.05, pero el modelo
-            multivariado (Modelo B) sí captura la relación con R²=0.18,
-            confirmando que la afluencia es un predictor relevante cuando
-            se controla por temperatura y estacionalidad
-            (Gu et al., 2023).
-        </div>
-        """, unsafe_allow_html=True)
-
-    with h_col2:
         mape_prophet = modelos["mape_af_prophet"]   # 5.05% del Módulo 2B
         mape_af_base = modelos["mape_af"]            # Modelo A baseline
         prec_prophet = 100 - mape_prophet
