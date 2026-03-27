@@ -1333,7 +1333,7 @@ else:
     prec_prophet = 100 - mape_prophet
     h2_ok    = prec_prophet >= 85.0
     cls_h2   = "hip-confirmada" if h2_ok else "hip-parcial"
-    lbl_h2   = "✅ Confirmada" if h2_ok else "Parcialmente confirmada"
+    lbl_h2   = "Confirmada" if h2_ok else "Parcialmente confirmada"
     usando_p = modelos["usando_prophet"]
 
     st.markdown(f"""
@@ -1359,7 +1359,7 @@ else:
      <div class="pred-row">
          <span class="pred-label">Modelo activo en dashboard</span>
          <span class="pred-val">
-                    {'✅ Prophet + eventos' if usando_p else '⚠️ Regresión (pkl no encontrado)'}
+                    {'✅ Prophet + eventos' if usando_p else 'Regresión (pkl no encontrado)'}
          </span>
      </div>
      </div>
@@ -1376,7 +1376,7 @@ else:
     # ── Sección 2: Desempeño de los 4 modelos ────────────────────────────────
     st.markdown("""
     <div class="section-card">
-    <div class="section-title">📐 Desempeño del sistema predictivo</div>
+    <div class="section-title">Desempeño del sistema predictivo</div>
     """, unsafe_allow_html=True)
 
     m_col1, m_col2, m_col3, m_col4 = st.columns(4)
@@ -1536,7 +1536,7 @@ else:
     # ── Sección 4: Hallazgos y vacío teórico ─────────────────────────────────
     st.markdown("""
     <div class="section-card">
-    <div class="section-title">💡 Hallazgos y aportaciones</div>
+    <div class="section-title">Hallazgos y aportaciones</div>
     """, unsafe_allow_html=True)
 
     h1_col, h2_col, h3_col = st.columns(3)
