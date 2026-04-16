@@ -1382,8 +1382,8 @@ else:
     m_col1, m_col2, m_col3, m_col4 = st.columns(4)
 
     for col, letra, nombre, mape, nota in [
-        (m_col1, "A", "Afluencia\nmensual\n(baseline)",  modelos["mape_af"],         "Regresión + estacionalidad"),
-        (m_col2, "A2", "Afluencia\nmensual\n(Prophet)",   modelos["mape_af_prophet"], "Prophet"),
+        (m_col1, "A", "Afluencia\nmensual\n",  modelos["mape_af"],         "Regresión + estacionalidad"),
+        (m_col2, "A2", "Afluencia\nmensual\n",   modelos["mape_af_prophet"], "Prophet"),
         (m_col3, "B", "Gasto\noperativo",                modelos["mape_gs"],         "Ridge Regression"),
         (m_col4, "C/D", "Consumo\neléctrico y de agua",     max(modelos["mape_en"], modelos["mape_ag"]), "Reg. lineal múltiple"),
     ]:
