@@ -1338,6 +1338,13 @@ else:
 
     st.markdown(f"""
     <p style='font-size:0.82rem; color:#8D99AE; margin-bottom:0.5rem;
+      font-weight:600; text-transform:uppercase;'>H1</p>
+    <p style='font-size:0.9rem; color:#2C3E50; margin-bottom:0.7rem;'>
+      "El análisis predictivo de la afluencia y su relación con el consumo de agua y energía en la Plaza Paseo San Isidro permite generar proyecciones con precisión suficiente (MAPE menor o igual a 10%)."
+    </p>
+    <span class="hipotesis-badge {cls_h2}">{lbl_h2}</span>
+
+    <p style='font-size:0.82rem; color:#8D99AE; margin-bottom:0.5rem;
       font-weight:600; text-transform:uppercase;'>H2</p>
     <p style='font-size:0.9rem; color:#2C3E50; margin-bottom:0.7rem;'>
       "La afluencia podrá ser anticipada con un 85% de precisión."
