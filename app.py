@@ -1317,7 +1317,7 @@ else:
 
     st.markdown("""
     <div class="page-header">
-        <h1>Panel académico</h1>
+        <h1>Panel de validación</h1>
         <p>Validación de hipótesis - Desempeño del modelo - Hallazgos clave</p>
     </div>
     """, unsafe_allow_html=True)
@@ -1344,13 +1344,13 @@ else:
     </p>
     <span class="hipotesis-badge {cls_h2}">{lbl_h2}</span>
     <div class="pred-table" style='margin-top:0.8rem;'>
-        <div class="pred-row">
-             <span class="pred-label">Prophet + eventos (MAPE)</span>
-             <span class="pred-val">{mape_prophet:.2f}%  →  {prec_prophet:.1f}%</span>
-         </div>
      <div class="pred-row">
-         <span class="pred-label">Modelo A — Regresión (baseline)</span>
+         <span class="pred-label">Modelo A — Regresión</span>
          <span class="pred-val">{mape_af_base:.2f}%  →  {100-mape_af_base:.1f}%</span>
+     </div>
+     <div class="pred-row">
+         <span class="pred-label">Modelo A2 - Prophet (MAPE)</span>
+         <span class="pred-val">{mape_prophet:.2f}%  →  {prec_prophet:.1f}%</span>
      </div>
      <div class="pred-row">
          <span class="pred-label">Meta del anteproyecto</span>
@@ -1359,7 +1359,7 @@ else:
      <div class="pred-row">
          <span class="pred-label">Modelo activo en dashboard</span>
          <span class="pred-val">
-                    {'✅ Prophet + eventos' if usando_p else 'Regresión (pkl no encontrado)'}
+                    {'✅ Prophet' if usando_p else 'Regresión (pkl no encontrado)'}
          </span>
      </div>
      </div>
@@ -1383,7 +1383,7 @@ else:
 
     for col, letra, nombre, mape, nota in [
         (m_col1, "A", "Afluencia\nmensual\n(baseline)",  modelos["mape_af"],         "Regresión + estacionalidad"),
-        (m_col2, "P", "Afluencia\nmensual\n(Prophet)",   modelos["mape_af_prophet"], "Prophet + eventos"),
+        (m_col2, "A2", "Afluencia\nmensual\n(Prophet)",   modelos["mape_af_prophet"], "Prophet"),
         (m_col3, "B", "Gasto\noperativo",                modelos["mape_gs"],         "Ridge Regression"),
         (m_col4, "C/D", "Consumo\neléctrico y de agua",     max(modelos["mape_en"], modelos["mape_ag"]), "Reg. lineal múltiple"),
     ]:
@@ -1453,9 +1453,9 @@ else:
     if modelos["y_pred_prophet_hist"] is not None:
         ax2.plot(dm["fecha"], modelos["y_pred_prophet_hist"],
                  color=C_POS, lw=2, ls="--",
-                 label=f"Prophet + eventos (MAPE {modelos['mape_af_prophet']:.1f}%)")
+                 label=f"Modelo A2 Prophet (MAPE {modelos['mape_af_prophet']:.1f}%)")
         ax2.plot(dm["fecha"], y_af_p, color=C_GRIS, lw=1.5, ls=":",
-                 alpha=0.7, label=f"Modelo A baseline (MAPE {modelos['mape_af']:.1f}%)")
+                 alpha=0.7, label=f"Modelo A (MAPE {modelos['mape_af']:.1f}%)")
     else:
         ax2.plot(dm["fecha"], y_af_p, color=C_NARJ, lw=2, ls="--",
                  label=f"Modelo A (MAPE {modelos['mape_af']:.1f}%)")
@@ -1504,7 +1504,7 @@ else:
     mape_para_id = (modelos["mape_af_prophet"]
                     if modelos["y_pred_prophet_hist"] is not None
                     else modelos["mape_af"])
-    titulo_id    = ("Prophet + eventos" if modelos["y_pred_prophet_hist"] is not None
+    titulo_id    = ("Modelo A2 - Prophet" if modelos["y_pred_prophet_hist"] is not None
                     else "Modelo A — Regresión")
 
     ax4.scatter(y_af_h, y_af_para_id, color=C_SEC, alpha=0.7, s=50,
