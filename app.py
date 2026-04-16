@@ -771,7 +771,7 @@ with st.sidebar:
 
     vista = st.radio(
         "Selecciona la vista:",
-        options=["Panel operativo", "Panel académico"],
+        options=["Panel operativo", "Panel de validación"],
         label_visibility="collapsed",
     )
 
