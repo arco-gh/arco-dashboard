@@ -891,7 +891,7 @@ if vista == "Panel operativo":
         cls_ratio  = "negativo" if delta_meta > 0 else "positivo"
         st.markdown(f"""
         <div class="kpi-card">
-            <div class="kpi-label">Ratio gasto / ingresos</div>
+            <div class="kpi-label">Proporción / ingresos</div>
             <div class="kpi-value">{ratio_pct:.1f}%</div>
             <span class="kpi-delta {cls_ratio}">
                 {'+' if delta_meta > 0 else ''}{delta_meta:.1f} pts vs meta 10%
@@ -1272,12 +1272,12 @@ if vista == "Panel operativo":
     fig_rt.update_layout(
         **LAYOUT_BASE,
         title=dict(
-            text=f"Ratio gasto / ingresos (%) — histórico y proyección {año_sel}",
+            text=f"Proporción gasto / ingresos (%) — histórico y proyección {año_sel}",
             font=dict(size=13, color=C_PRIM, family="DM Sans, sans-serif"),
             x=0.01,
         ),
         yaxis=dict(
-            title="Ratio gasto / ingresos (%)",
+            title="Proporción gasto / ingresos (%)",
             gridcolor="#E8ECF0",
             tickformat=".1f",
             ticksuffix="%",
@@ -1345,7 +1345,7 @@ else:
     <p style='font-size:0.82rem; color:#8D99AE; margin-bottom:0.5rem;
       font-weight:600; text-transform:uppercase;'>Hipótesis</p>
     <p style='font-size:0.9rem; color:#2C3E50; margin-bottom:0.7rem;'>
-      "El análisis predictivo de la afluencia y su relación con el consumo de agua y energía en la Plaza Paseo San Isidro permite generar proyecciones con precisión suficiente (MAPE menor o igual a 10%)."
+      "El análisis predictivo de la afluencia en la Plaza Paseo San Isidro permite generar proyecciones con precisión suficiente (MAPE menor o igual a 10%)."
     </p>
     <span class="hipotesis-badge {cls_h2}">{lbl_h2}</span>
     <div class="pred-table" style='margin-top:0.8rem;'>
@@ -1589,7 +1589,7 @@ else:
                 Ahorro potencial: ${ahorro_anual/1e6:.2f}M MXN/año
             </div>
             <div style='font-size:0.85rem; color:#2C3E50; line-height:1.5;'>
-                En un escenario moderado de reducción del 5% en el ratio
+                En un escenario moderado de reducción del 5% en la proporción
                 gasto/ingresos, el ahorro anual estimado asciende a
                 <strong>${ahorro_anual:,.0f} MXN</strong>
                 (Amangeldy et al., 2025).
