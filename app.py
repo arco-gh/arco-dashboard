@@ -1288,7 +1288,7 @@ if vista == "Panel operativo":
     )
 
     # Renderizar en dos columnas
-    col_graf_izq, col_graf_der = st.columns(2)
+    col_graf_izq, col_graf_der = st.columns(1)
     with col_graf_izq:
         st.plotly_chart(fig_af, use_container_width=True)
     with col_graf_der:
