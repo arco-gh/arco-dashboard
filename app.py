@@ -891,7 +891,7 @@ if vista == "Panel operativo":
         cls_ratio  = "negativo" if delta_meta > 0 else "positivo"
         st.markdown(f"""
         <div class="kpi-card">
-            <div class="kpi-label">Proporción / ingresos</div>
+            <div class="kpi-label">Proporción gasto / ingresos</div>
             <div class="kpi-value">{ratio_pct:.1f}%</div>
             <span class="kpi-delta {cls_ratio}">
                 {'+' if delta_meta > 0 else ''}{delta_meta:.1f} pts vs meta 10%
@@ -1237,7 +1237,7 @@ if vista == "Panel operativo":
                     line=dict(color="white", width=2)),
         hovertemplate=(
             f"<b>{mes_nombre} {año_sel}</b><br>"
-            f"Ratio: {pred['ratio_pred']:.1%}<br>"
+            f"Índice: {pred['ratio_pred']:.1%}<br>"
             f"Gasto: ${pred['gasto_pred']:,.0f}"
             "<extra></extra>"
         ),
