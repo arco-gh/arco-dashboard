@@ -1038,7 +1038,7 @@ if vista == "Panel operativo":
     df_proy["hover_ratio"] = df_proy.apply(
         lambda r: (
             f"<b>{r['mes_nombre']} {año_sel}</b><br>"
-            f"Ratio proyectado: {r['ratio_pred']:.1%}<br>"
+            f"Índice proyectado: {r['ratio_pred']:.1%}<br>"
             f"Gasto proyectado: ${r['gasto_pred']:,.0f}<br>"
             f"Modelo: {r['fuente']}"
         ), axis=1
@@ -1046,7 +1046,7 @@ if vista == "Panel operativo":
     dm_graf["hover_ratio"] = dm_graf.apply(
         lambda r: (
             f"<b>{r['fecha'].strftime('%B %Y')}</b><br>"
-            f"Ratio real: {r['ratio_gasto_ingresos']:.1%}<br>"
+            f"Índice real: {r['ratio_gasto_ingresos']:.1%}<br>"
             f"Gasto: ${r['gasto-operativo-total']:,.0f}<br>"
             f"Ingresos: ${r['ingresos_por_renta']:,.0f}"
         ), axis=1
