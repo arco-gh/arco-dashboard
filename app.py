@@ -1287,12 +1287,17 @@ if vista == "Panel operativo":
         barmode="overlay",
     )
 
+    # Renderizar a una columna
+    st.plotly_chart(fig_af, use_container_width=True)
+    st.divider()  # línea separadora opcional
+    st.plotly_chart(fig_rt, use_container_width=True)
+    
     # Renderizar en dos columnas
-    col_graf_izq, col_graf_der = st.columns(1)
-    with col_graf_izq:
-        st.plotly_chart(fig_af, use_container_width=True)
-    with col_graf_der:
-        st.plotly_chart(fig_rt, use_container_width=True)
+    # col_graf_izq, col_graf_der = st.columns(1)
+    # with col_graf_izq:
+    #    st.plotly_chart(fig_af, use_container_width=True)
+    # with col_graf_der:
+    #    st.plotly_chart(fig_rt, use_container_width=True)
 
     st.markdown("</div>", unsafe_allow_html=True)
 
